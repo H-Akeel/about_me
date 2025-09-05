@@ -1,0 +1,6 @@
+@media (max-width: 768px){
+  .nav-menu{flex-wrap:wrap;gap:8px}
+  .hero{padding:48px 0}
+  .features{grid-template-columns:1fr}
+  .logo-text h1{font-size:18px}
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسين عقيل صبري - مطور برمجيات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">حسين عقيل صبري</div>
+                <nav class="nav">
+                    <a href="#home">الرئيسية</a>
+                    <a href="#about">من أنا</a>
+                    <a href="#skills">مهاراتي</a>
+                    <a href="#services">خدماتي</a>
+                    <a href="#projects">مشاريعي</a>
+                    <a href="#contact">تواصل معي</a>
+                </nav>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>مرحباً، أنا حسين عقيل صبري</h1>
+                    <h2>مطور برمجيات | محلل أنظمة | مدير مشاريع تقنية المعلومات</h2>
+                    <p>متخصص في تقنية المعلومات مع خبرة عملية في تطوير الويب الشامل، تكامل قواعد البيانات، وبناء الأدوات
+                        الرقمية الذكية</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-external-link-alt"></i>
+                            تصفح أعمالي
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i>
+                            تواصل معي
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="profile.jpg" alt="حسين عقيل صبري">
+                        </div>
+                        <div class="profile-badge">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>من أنا؟</h2>
+                <p>تعرف على خلفيتي ومسيرتي المهنية</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>نبذة شخصية ومهنية</h3>
+                    <p>أنا حسين عقيل صبري، متخصص في تقنية المعلومات متعدد المهارات مع خبرة عملية في تطوير الويب الشامل،
+                        تكامل قواعد البيانات، وبناء الأدوات الرقمية الذكية.</p>
+                    <p>أمتلك مهارات قوية في PHP، MySQL، JavaScript، وتطوير الواجهات الأمامية والخلفية. أسعى دائماً
+                        لتقديم حلول تقنية مبتكرة وفعالة.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">سنوات خبرة</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">مشروع مكتمل</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <h3>معلومات شخصية</h3>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <strong>الاسم:</strong> حسين عقيل صبري
+                        </div>
+                        <div class="info-item">
+                            <strong>التخصص:</strong> IT
+                        </div>
+                        <div class="info-item">
+                            <strong>الموقع:</strong> العراق، بغداد
+                        </div>
+                        <div class="info-item">
+                            <strong>الهاتف:</strong> 6674 717 0773
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>مهاراتي التقنية</h2>
+                <p>التقنيات والأدوات التي أتقنها في مختلف المجالات التقنية</p>
+            </div>
+
+            <!-- مهارات البرمجة والتطوير -->
+            <div class="skills-category">
+                <h3 class="category-title">البرمجة والتطوير</h3>
+                <div class="skills-grid">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h3>PHP</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>MySQL</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>HTML5</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95%"></div>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <h3>CSS3</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90%"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Full Stack</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مهارات الاتصالات وتكنولوجيا المعلومات -->
+            <div class="skills-category">
+                <h3 class="category-title">الاتصالات وتكنولوجيا المعلومات</h3>
+                <div class="skills-grid">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>شبكات الحاسب</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>إدارة الخوادم</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>أمن المعلومات</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65%"></div>
+                        </div>
+                        <span class="skill-percentage">65%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>الحوسبة السحابية</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="60%"></div>
+                        </div>
+                        <span class="skill-percentage">60%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>شبكات لاسلكية</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-broadcast-tower"></i>
+                        </div>
+                        <h3>اتصالات البيانات</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مهارات الشبكات -->
+            <div class="skills-category">
+                <h3 class="category-title">الشبكات والاتصالات</h3>
+                <div class="skills-grid">
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>توجيه الشبكات</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-ethernet"></i>
+                        </div>
+                        <h3>تبديل الشبكات</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80%"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h3>شبكات الاتصالات</h3>
+
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-item fade-in">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i> 
+                        </div>
+                        <h3>جدران الحماية</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتي</h2>
+                <p>الخدمات التقنية التي أقدمها</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>تطوير مواقع الويب</h3>
+                    <p>تطوير مواقع ويب متجاوبة وحديثة باستخدام أحدث التقنيات</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>المتاجر الإلكترونية</h3>
+                    <p>بناء متاجر إلكترونية متكاملة مع أنظمة دفع آمنة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>إدارة قواعد البيانات</h3>
+                    <p>تصميم وإدارة قواعد البيانات بكفاءة عالية</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>التطبيقات المتجاوبة</h3>
+                    <p>تطوير تطبيقات ويب متجاوبة مع جميع الأجهزة</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>الصيانة والدعم</h3>
+                    <p>صيانة المواقع والتطبيقات مع دعم فني مستمر</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>تحسين الأداء</h3>
+                    <p>تحسين أداء المواقع وسرعة التحميل</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>مشاريعي</h2>
+                <p>أمثلة على أنواع المواقع التي يمكنني تطويرها</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openProject('SHOP/index.html')">
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>مواقع التجارة الإلكترونية</h3>
+                    <p>متاجر إلكترونية متكاملة مع أنظمة دفع آمنة</p>
+                    <div class="project-examples">
+                        <span class="example-tag">Amazon</span>
+                        <span class="example-tag">eBay</span>
+                        <span class="example-tag">Shopify</span>
+                    </div>
+                    <div class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>زيارة مثال</span>
+                    </div>
+                </div>
+                <div class="project-card" onclick="openProject('combany/index.html')">
+                    <div class="project-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>مواقع الشركات</h3>
+                    <p>مواقع احترافية تعرض خدمات ومنتجات الشركات</p>
+                    <div class="project-examples">
+                        <span class="example-tag">Apple</span>
+                        <span class="example-tag">Microsoft</span>
+                        <span class="example-tag">Google</span>
+                    </div>
+                    <div class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>زيارة مثال</span>
+                    </div>
+                </div>
+                <div class="project-card" onclick="openProject('restaurant/index.html')">
+                    <div class="project-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>مواقع المطاعم</h3>
+                    <p>مواقع تفاعلية مع قوائم الطعام وخدمة الطلبات</p>
+                    <div class="project-examples">
+                        <span class="example-tag">McDonald's</span>
+                        <span class="example-tag">KFC</span>
+                        <span class="example-tag">Pizza Hut</span>
+                    </div>
+                    <div class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>زيارة مثال</span>
+                    </div>
+                </div>
+                <div class="project-card" onclick="openProject('Manage/index.html')">
+                    <div class="project-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>مواقع إدارة الفعاليات</h3>
+                    <p>منصات تنظيم وإدارة الفعاليات والمؤتمرات</p>
+                    <div class="project-examples">
+                        <span class="example-tag">Eventbrite</span>
+                        <span class="example-tag">Meetup</span>
+                        <span class="example-tag">Facebook Events</span>
+                    </div>
+                    <div class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span>زيارة مثال</span>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <h3>هل تريد موقعاً مشابهاً؟</h3>
+                <p>يمكنني تطوير أي نوع من هذه المواقع بتصميم احترافي ومميزات متقدمة تناسب احتياجاتك</p>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    تواصل معي الآن
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معي</h2>
+                <p>هل لديك مشروع؟ دعنا نتحدث!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>العنوان</strong>
+                            <p>بغداد، العراق</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>الهاتف</strong>
+                            <p> 6674 717 773 964+</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <strong>البريد الإلكتروني</strong>
+                            <p>hussinmam15@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>أرسل رسالة</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="الاسم الكامل" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="البريد الإلكتروني" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="الموضوع" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="الرسالة" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>حسين عقيل صبري</h3>
+                    <p>مطور برمجيات متخصص في تقنية المعلومات</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#about">من أنا</a></li>
+                        <li><a href="#services">خدماتي</a></li>
+                        <li><a href="#projects">مشاريعي</a></li>
+                        <li><a href="#contact">تواصل معي</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معي</h4>
+                    <div class="social-links">
+                        <!--  <a href="#"><i class="fab fa-facebook"></i></a>  -->
+                        <!--  <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        <a
+                            href="https://www.linkedin.com/in/hussein-sabry-73a898374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/H-Akeel"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 حسين عقيل صبري. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم عربي - أصالة الطعم وجودة الخدمة</title>
+    <meta name="description" content="مطعم عربي أصيل يقدم أشهى الأطباق العربية والشرق أوسطية مع خدمة توصيل وحجز طاولات">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="top-bar-left">
+                        <span><i class="fas fa-clock"></i> مفتوح يومياً من 10 ص إلى 12 م</span>
+                        <span><i class="fas fa-phone"></i> +966 50 123 4567</span>
+                    </div>
+                    <div class="top-bar-right">
+                        <a href="#" class="top-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="top-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="top-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="top-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <img src="images/logos/main-logo.png" alt="مطعم عربي" class="logo-img">
+                        <div class="logo-text">
+                            <h1>مطعم عربي</h1>
+                            <span>أصالة الطعم</span>
+                        </div>
+                    </div>
+                    
+                    <nav class="navigation">
+                        <ul class="nav-menu">
+                            <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                            <li><a href="#menu" class="nav-link">قائمة الطعام</a></li>
+                            <li><a href="#about" class="nav-link">من نحن</a></li>
+                            <li><a href="#gallery" class="nav-link">معرض الصور</a></li>
+                            <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                        </ul>
+                        
+                        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </nav>
+                    
+                    <div class="header-actions">
+                        <button class="action-btn" onclick="toggleCart()" title="سلة الطلبات">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="badge" id="cartCount">0</span>
+                        </button>
+                        <button class="btn btn-primary" onclick="showReservationModal()">
+                            <i class="fas fa-calendar-alt"></i>
+                            احجز طاولة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="images/restaurant/interior-1.jpg" alt="مطعم عربي" class="hero-image">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">مرحباً بكم في مطعم عربي</h1>
+                    <p class="hero-subtitle">تذوقوا أشهى الأطباق العربية الأصيلة في أجواء دافئة ومريحة</p>
+                    <p class="hero-description">نقدم لكم تجربة طعام لا تُنسى مع أطباق محضرة بحب وعناية من أجود المكونات</p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToMenu()">
+                            <i class="fas fa-utensils"></i>
+                            تصفح القائمة
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="showReservationModal()">
+                            <i class="fas fa-calendar-alt"></i>
+                            احجز طاولة
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">سنة خبرة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">طبق مميز</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">عميل راضي</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.8</div>
+                        <div class="stat-label">تقييم العملاء</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>أطباق أصيلة</h3>
+                    <p>وصفات تراثية محضرة بأجود المكونات الطازجة</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>توصيل سريع</h3>
+                    <p>خدمة توصيل سريعة وموثوقة لجميع أنحاء المدينة</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>حجز مسبق</h3>
+                    <p>احجز طاولتك مسبقاً واستمتع بتجربة طعام مميزة</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>جودة عالية</h3>
+                    <p>التزام بأعلى معايير الجودة والنظافة والطعم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes -->
+    <section class="featured-dishes" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أطباقنا المميزة</h2>
+                <p class="section-subtitle">تذوقوا مجموعة مختارة من أشهى أطباقنا</p>
+            </div>
+            
+            <div class="dishes-grid" id="featuredDishes">
+                <!-- Dishes will be loaded here by JavaScript -->
+            </div>
+            
+            <div class="section-footer">
+                <button class="btn btn-outline" onclick="showFullMenu()">
+                    <i class="fas fa-list"></i>
+                    عرض القائمة كاملة
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers">
+        <div class="container">
+            <div class="offers-content">
+                <div class="offer-text">
+                    <h2>عرض خاص اليوم</h2>
+                    <h3>وجبة مشاوي مشكلة + مشروب + حلى</h3>
+                    <p>استمتع بأشهى المشاوي مع مشروب منعش وحلى لذيذة</p>
+                    <div class="offer-price">
+                        <span class="old-price">120 دينار</span>
+                        <span class="new-price">85 دينار</span>
+                        <span class="discount">خصم 30%</span>
+                    </div>
+                    <button class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-bag"></i>
+                        اطلب الآن
+                    </button>
+                </div>
+                
+                <div class="offer-image">
+                    <img src="images/food/arabic-dishes-1.jpg" alt="عرض خاص">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آراء عملائنا</h2>
+                <p class="section-subtitle">ماذا يقول عملاؤنا عن تجربتهم معنا</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"طعم رائع وخدمة ممتازة. المطعم يقدم أطباق أصيلة بجودة عالية. أنصح بزيارته بشدة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <span>عميل دائم</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"أجواء رائعة وطعام لذيذ. الكباب الحلبي والحمص من أفضل ما تذوقت. خدمة التوصيل سريعة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>فاطمة أحمد</h4>
+                            <span>عميلة مميزة</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"مطعم عائلي رائع. الأطفال أحبوا الطعام والأجواء. نأتي هنا كل أسبوع مع العائلة."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>سارة علي</h4>
+                            <span>أم لثلاثة أطفال</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logos/main-logo.png" alt="مطعم عربي" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <h3>مطعم عربي</h3>
+                            <span>أصالة الطعم</span>
+                        </div>
+                    </div>
+                    <p>مطعم عربي أصيل يقدم أشهى الأطباق العربية والشرق أوسطية في أجواء دافئة ومريحة مع خدمة متميزة.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#menu">قائمة الطعام</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>معلومات التواصل</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span> موقعنا على كوكب الارض </span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+XXX XXX XXX XXX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@arabicrestaurant.sa</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>يومياً من 10:00 ص إلى 12:00 م</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>النشرة الإخبارية</h4>
+                    <p>اشترك للحصول على آخر العروض والأطباق الجديدة</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="newsletter-input" id="newsletterEmail">
+                        <button class="btn btn-primary" onclick="subscribeNewsletter()">
+                            <i class="fas fa-paper-plane"></i>
+                            اشتراك
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 مطعم عربي. جميع الحقوق محفوظة.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">سياسة الخصوصية</a>
+                        <a href="#">شروط الاستخدام</a>
+                        <a href="#">سياسة الإرجاع</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>سلة الطلبات</h3>
+            <button class="close-btn" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-content" id="cartContent">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>سلة الطلبات فارغة</p>
+                <button class="btn btn-primary" onclick="scrollToMenu()">ابدأ الطلب</button>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span>المجموع: <span id="cartTotal">0</span> دينار</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="proceedToCheckout()">
+                إتمام الطلب
+            </button>
+        </div>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div class="modal" id="reservationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>حجز طاولة</h3>
+                <button class="close-btn" onclick="closeReservationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="reservation-form" id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>الاسم الكامل *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف *</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>التاريخ *</label>
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>الوقت *</label>
+                            <select name="time" required>
+                                <option value="">اختر الوقت</option>
+                                <option value="12:00">12:00 ظهراً</option>
+                                <option value="13:00">1:00 ظهراً</option>
+                                <option value="14:00">2:00 ظهراً</option>
+                                <option value="19:00">7:00 مساءً</option>
+                                <option value="20:00">8:00 مساءً</option>
+                                <option value="21:00">9:00 مساءً</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>عدد الأشخاص *</label>
+                        <select name="guests" required>
+                            <option value="">اختر العدد</option>
+                            <option value="1">شخص واحد</option>
+                            <option value="2">شخصان</option>
+                            <option value="3">3 أشخاص</option>
+                            <option value="4">4 أشخاص</option>
+                            <option value="5">5 أشخاص</option>
+                            <option value="6">6 أشخاص</option>
+                            <option value="more">أكثر من 6</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ملاحظات خاصة</label>
+                        <textarea name="notes" rows="3" placeholder="أي طلبات خاصة أو ملاحظات..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-calendar-check"></i>
+                        تأكيد الحجز
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>جاري التحميل...</p>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

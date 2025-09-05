@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evently - منصة إدارة الفعاليات والمؤتمرات</title>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b4a;
+            --accent-color: #6b4aff;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* التصميم العام */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3a5ae0;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e05a3a;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?conference');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: var(--dark-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .events {
+            padding: 4rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .event-content {
+            padding: 1.5rem;
+        }
+        
+        .event-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .event-card p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-color);
+        }
+        
+        .partners {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .partner-logo {
+            height: 60px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .partner-logo:hover {
+            opacity: 1;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* نماذج الإدخال */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* صفحة الفعاليات */
+        .events-filter {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* صفحة تفاصيل الفعالية */
+        .event-detail-header {
+            background-size: cover;
+            background-position: center;
+            padding: 3rem 0;
+            color: white;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .event-detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+        }
+        
+        .event-detail-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .event-detail-body {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .event-info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        /* تأثيرات تفاعلية */
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        
+        .animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* علامات التبويب */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tab {
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .tab.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Evently</a>
+                <ul class="nav-links">
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">الفعاليات</a></li>
+                    <li><a href="#">إنشاء فعالية</a></li>
+                    <li><a href="#">لمنظمي الفعاليات</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+                <div>
+                    <a href="#" class="btn">تسجيل الدخول</a>
+                    <a href="#" class="btn btn-secondary">إنشاء حساب</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="hero">
+        <div class="container">
+            <h1>منصة متكاملة لإدارة الفعاليات والمؤتمرات</h1>
+            <p>نقدم لك الحلول الشاملة لتنظيم وإدارة فعالياتك بكل كفاءة واحترافية، من التخطيط إلى التنفيذ</p>
+            <a href="#" class="btn">استكشف الفعاليات</a>
+            <a href="#" class="btn btn-secondary">أنشئ فعاليتك</a>
+        </div>
+    </section>
+
+    <!-- الميزات -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">ميزات منصتنا</h2>
+            <div class="features-grid">
+                <div class="feature-card animated">
+                    <div class="feature-icon">📅</div>
+                    <h3>إنشاء الفعاليات بسهولة</h3>
+                    <p>أدوات بسيطة وقوية لإنشاء فعالياتك وإدارتها بطريقة احترافية مع خيارات تخصيص متعددة</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">🎟️</div>
+                    <h3>بيع التذاكر وإدارة الحضور</h3>
+                    <p>نظام متكامل لبيع التذاكر وإدارة الحضور مع خيارات دفع متعددة وتقارير مفصلة</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">📊</div>
+                    <h3>تحليلات وتقارير</h3>
+                    <p>احصل على تقارير وتحليلات مفصلة عن فعالياتك لاتخاذ قرارات أفضل وتحسين أدائك</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">📱</div>
+                    <h3>تطبيقات الجوال</h3>
+                    <p>وفر تطبيقات جوال مخصصة لفعالياتك لتعزيز تجربة الحضور وتسهيل التواصل</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">🌐</div>
+                    <h3>صفحات ويب مخصصة</h3>
+                    <p>صمم صفحات ويب جذابة ومخصصة لفعالياتك مع خيارات تخصيص غير محدودة</p>
+                </div>
+                <div class="feature-card animated">
+                    <div class="feature-icon">🔔</div>
+                    <h3>إشعارات وتذكيرات</h3>
+                    <p>أرسل إشعارات وتذكيرات تلقائية للحضور والمشاركين لضمان نجاح فعاليتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفعاليات القادمة -->
+    <section class="events">
+        <div class="container">
+            <h2 class="section-title">الفعاليات القادمة</h2>
+            <div class="events-grid">
+                <div class="event-card animated">
+                    <div class="event-img" style="background-image: url('https://source.unsplash.com/random/600x400/?conference');"></div>
+                    <div class="event-content">
+                        <div class="event-date">15 أكتوبر 2023 - 10:00 صباحاً</div>
+                        <h3>مؤتمر التكنولوجيا والابتكار</h3>
+                        <p>أكبر تجمع للمهتمين بالتكنولوجيا والابتكار في المنطقة</p>
+                        <a href="#" class="btn">التفاصيل والحضور</a>
+                    </div>
+                </div>
+                <div class="event-card animated">
+                    <div class="event-img" style="background-image: url('https://source.unsplash.com/random/600x400/?workshop');"></div>
+                    <div class="event-content">
+                        <div class="event-date">22 أكتوبر 2023 - 4:00 مساءً</div>
+                        <h3>ورشة عمل التسويق الرقمي</h3>
+                        <p>تعلم أحدث استراتيجيات التسويق الرقمي من الخبراء</p>
+                        <a href="#" class="btn">التفاصيل والحضور</a>
+                    </div>
+                </div>
+                <div class="event-card animated">
+                    <div class="event-img" style="background-image: url('https://source.unsplash.com/random/600x400/?networking');"></div>
+                    <div class="event-content">
+                        <div class="event-date">5 نوفمبر 2023 - 6:00 مساءً</div>
+                        <h3>فعالية networking للشركات الناشئة</h3>
+                        <p>فرصة للقاء المستثمرين وأصحاب الشركات الناشئة</p>
+                        <a href="#" class="btn">التفاصيل والحضور</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="btn">عرض جميع الفعاليات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الشركاء -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">المنصات المتكاملة</h2>
+            <div class="partners-grid">
+                <img src="https://via.placeholder.com/200x80/4a6bff/ffffff?text=Facebook+Events" alt="Facebook Events" class="partner-logo">
+                <img src="https://via.placeholder.com/200x80/ff6b4a/ffffff?text=Meetup" alt="Meetup" class="partner-logo">
+                <img src="https://via.placeholder.com/200x80/6b4aff/ffffff?text=Eventbrite" alt="Eventbrite" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة للعمل -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1600x900/?event');">
+        <div class="container">
+            <h2>جاهز لبدء رحلة تنظيم فعالياتك؟</h2>
+            <p>انضم إلى آلاف المنظمين الذين يثقون بمنصتنا لتنظيم فعاليات ناجحة</p>
+            <a href="#" class="btn">أنشئ فعاليتك الأولى</a>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Evently</h3>
+                    <p>منصة متكاملة لتنظيم وإدارة الفعاليات والمؤتمرات بكل كفاءة واحترافية</p>
+                </div>
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#">الفعاليات</a></li>
+                        <li><a href="#">إنشاء فعالية</a></li>
+                        <li><a href="#">المديرين والمنظمين</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>الموارد</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">المدونة</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">البرامج التعليمية</a></li>
+                        <li><a href="#">الدعم</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <ul class="footer-links">
+                        <li>البريد الإلكتروني: info@evently.com</li>
+                        <li>الهاتف: مكعب حزن و جوررح   </li>
+                        <li>العنوان: محتاج شي ؟
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Evently. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // كود JavaScript للتفاعلات
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأثير الظهور التدريجي للعناصر
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            function checkScroll() {
+                animatedElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('animate');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); // التحقق مرة الأولى عند التحميل
+            
+            // نظام علامات التبويب (لصفحات أخرى)
+            const tabs = document.querySelectorAll('.tab');
+            if (tabs.length > 0) {
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const target = tab.dataset.target;
+                        
+                        // إزالة النشاط من جميع علامات التبويب والمحتويات
+                        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                        
+                        // إضافة النشاط للعناصر المحددة
+                        tab.classList.add('active');
+                        document.getElementById(target).classList.add('active');
+                    });
+                });
+            }
+            
+            // نموذج الاتصال (لصفحة الاتصال)
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // هنا يمكن إضافة كود إرسال النموذج
+                    alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
